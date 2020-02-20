@@ -1,0 +1,283 @@
+  
+  .page {
+    position: absolute;
+    height:100%;
+    width:100%;
+    margin:-8px;
+    background-image:linear-gradient(
+          rgb(235, 221, 179),
+          rgb(218, 199, 163));
+    z-index: 1;
+  }
+  .page{
+    z-index: 1;
+    transition: opacity 0.7s linear;
+    opacity: 0;
+  }
+  .page:hover{
+    z-index: 1;
+    opacity: 1;
+  }
+
+  #mountain{
+    position: absolute;
+    left: 50%;
+    width:150px;
+    height: 270px;
+    -webkit-clip-path: polygon(40% 0, 60% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(40% 0, 60% 0, 100% 100%, 0% 100%);
+    background-image:linear-gradient(
+          rgb(255, 255, 219),
+          rgb(243, 224, 172),
+          rgb(226,209,173));
+  }
+
+  #triangle-up {
+    position: absolute;
+    left: 50%;
+    width:40px;
+    height: 60px;
+    -webkit-clip-path: polygon(49% 0, 24% 100%, 75% 100%);
+    clip-path: polygon(49% 0, 24% 100%, 75% 100%);
+    background-image:linear-gradient(
+          rgb(255, 0, 0),
+          rgb(87, 0, 0));
+  }
+
+  #hill{
+    position: absolute;
+    left: 50%;
+    width:600px;
+    height:600px;
+    -webkit-clip-path: circle(90.0% at 50% 100%);
+    clip-path: circle(90.0% at 50% 100%);
+    background-image:linear-gradient(
+          rgb(203,181,146),
+          rgb(119,103,82));
+  }
+
+  #star{
+    position: absolute;
+    left: 50%;
+    width:100px;
+    height: 200px;
+    -webkit-clip-path: polygon(50% 0%, 56% 40%, 100% 44%, 56% 48%, 50% 100%, 43% 49%, 0 44%, 43% 40%);
+    clip-path: polygon(50% 0%, 56% 40%, 100% 44%, 56% 48%, 50% 100%, 43% 49%, 0 44%, 43% 40%);
+    background-image:linear-gradient(
+      rgb(255, 255, 255),
+      rgb(255, 255, 255),
+      rgb(243, 224, 172));
+  }
+
+  /* scene 1 */
+  @media only screen and (max-width: 510px) {
+    #triangle-up {
+      margin-left: -20px;
+      bottom:12%;
+    }
+    #mountain{
+      margin-left: -75px;
+      top:18%;
+    }
+    #hill{
+      margin-left: -300px;
+      bottom:-65.2%;
+    }
+    #star{
+      margin-left: -50px;
+      top:5.8%;
+    }
+  }
+  
+  /* scene 2 */
+@media only screen and (min-width: 510px) and (max-width: 760px) {
+  #triangle-up {
+    left: 50%; 
+    margin-left:-40px;
+    bottom:50%;
+    width:80px;
+    height: 120px;
+    animation-name: fly_up;
+    animation-duration: 4s;
+  }
+  #mountain{
+    margin-left: -700px;
+    top:50%;
+    width:1400px;
+    height: 800px;
+    animation-name: closer_mountain;
+    animation-duration: 4s;
+  }
+  #hill{
+    width:700px;
+    height: 600px;
+    margin-left: -350px;
+    bottom:-100%;
+    animation-name: fell;
+    animation-duration: 4s;
+  }
+  #star{
+    margin-left: -40px;
+    top:4.5%;
+    width:80px;
+    height: 160px;
+    animation-name: closer_star;
+    animation-duration: 4s;
+  }
+  @keyframes fly_up {
+    from {
+      left: 50%; 
+      margin-left:-20px;
+      bottom:12%;    
+      width:40px;
+      height: 60px;
+    }
+    to {
+      left: 50%; 
+      margin-left:-40px;
+      bottom:50%;
+      width:80px;
+      height: 120px;
+    }
+  }
+  @keyframes fell {
+    from {
+      width:600px;
+      height:600px;
+      margin-left: -300px;
+      bottom:-65.2%;
+    }
+    to {
+      width:700px;
+      height: 600px;
+      margin-left: -350px;
+      bottom:-100%;
+    }
+  }
+  @keyframes closer_star{
+    from {
+      margin-left: -50px;
+      top:5.8%;
+      width:100px;
+      height: 200px;
+    }
+    to{
+      margin-left: -40px;
+      top:4.5%;
+      width:80px;
+      height: 160px;
+    }
+  } 
+  @keyframes closer_mountain{
+    from{
+      margin-left: -75px;
+      top:18%;
+      width:150px;
+      height: 270px;
+    }
+    to{
+      margin-left: -700px;
+      top:50%;
+      width:1400px;
+      height: 800px;
+    }
+  } 
+}
+  
+  /* scene 3 */
+@media only screen and (min-width: 761px) {
+  #triangle-up {
+    margin-left:-160px;
+    bottom:14%;
+    width:320px;
+    height: 480px;
+    animation-name: bigger;
+    animation-duration: 4s;
+  }
+  #mountain{
+    margin-left: -2500px;
+    top:85%;
+    width:5000px;
+    height:1000px;
+    animation-name: on_mountain;
+    animation-duration: 4s;
+  }
+  #star{
+    margin-left: -26.5px;
+    top:35%;
+    width:50px;
+    height: 80px;
+    z-index: 1;
+    animation-name: star_in;
+    animation-duration: 4s;
+  }
+  #hill{
+    width:0px;
+    height: 0px;
+    margin-left: 0px;
+    bottom:-100%;
+    animation-name: disappear;
+    animation-duration: 4s;
+  }
+  @keyframes disappear {
+    from {
+      width:700px;
+      height: 600px;
+      margin-left: -350px;
+      bottom:-100%;
+      opacity: 1;
+    }
+    to {
+      width:0px;
+      height: 0px;
+      margin-left: 0px;
+      bottom:-100%;
+      opacity: 0;
+    }
+  }
+  @keyframes bigger {
+    from {
+      left: 50%; 
+      margin-left:-40px;
+      bottom:50%;
+      width:80px;
+      height: 120px;
+    }
+    to {
+      margin-left:-160px;
+      bottom:14%;
+      width:320px;
+      height: 480px;
+    }
+  }
+  @keyframes star_in{
+    from {
+      margin-left: -40px;
+      top:4.5%;
+      width:80px;
+      height: 160px;
+    }
+    to{
+      margin-left: -26.5px;
+      top:35%;
+      width:50px;
+      height: 80px;
+      z-index: 1;
+    }
+  } 
+  @keyframes on_mountain{
+    from{
+      margin-left: -700px;
+      top:50%;
+      width:1400px;
+      height: 800px;
+    }
+    to{
+      margin-left: -2500px;
+      top:85%;
+      width:5000px;
+      height:1000px;
+    }
+  } 
+}
+
