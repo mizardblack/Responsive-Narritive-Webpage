@@ -70,7 +70,7 @@
   }
 
   /* scene 1 */
-  @media only screen and (max-width: 510px) {
+  @media only screen and (max-width: 600px) {
     #triangle-up {
       margin-left: -20px;
       bottom:12%;
@@ -90,7 +90,7 @@
   }
   
   /* scene 2 */
-@media only screen and (min-width: 510px) and (max-width: 760px) {
+@media only screen and (min-width: 600px) and (max-width: 850px) {
   #triangle-up {
     left: 50%; 
     margin-left:-40px;
@@ -185,7 +185,7 @@
 }
   
   /* scene 3 */
-@media only screen and (min-width: 761px) {
+@media only screen and (min-width: 851px) {
   #triangle-up {
     margin-left:-160px;
     bottom:14%;
